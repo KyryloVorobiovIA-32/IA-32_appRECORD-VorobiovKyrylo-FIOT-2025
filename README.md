@@ -1,1 +1,1 @@
-# -IA-32_appRECORD-VorobiovKyrylo-FIOT-2025
+# IA-32_appRECORD-VorobiovKyrylo-FIOT-2025
