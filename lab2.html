@@ -223,6 +223,40 @@
                 </ul>
             </div>
 
+            <div id="sposoby" class="tab-content">
+                <h2>Способи підключення стилів</h2>
+                <p>Існує три основних способи додавання CSS до HTML-документа:</p>
+                <ul>
+                    <li><strong>Зовнішня таблиця стилів (External CSS):</strong> Стилі знаходяться в окремому <code>.css</code> файлі, що є найкращою практикою для великих сайтів.</li>
+                    <li><strong>Вбудована таблиця стилів (Internal/Embedded CSS):</strong> Стилі прописуються всередині тегу <code>&lt;style&gt;</code> прямо у <code>&lt;head&gt;</code> HTML-документа. Цей метод був використаний у лабораторній роботі.</li>
+                    <li><strong>Вбудовані стилі (Inline CSS):</strong> Стилі додаються безпосередньо до HTML-тегу за допомогою атрибута <code>style</code>.</li>
+                </ul>
+
+                <h3>Приклад вбудованої таблиці стилів (з ПР №2):</h3>
+                <p>CSS-код розміщується в тезі <code>&lt;style&gt;</code> всередині заголовка документа <code>&lt;head&gt;</code>.</p>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;title&gt;Світ Чашок&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #002060;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- ... контент сторінки ... --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
             <div id="selektory-tegu" class="tab-content">
                 <h2>Селектори тегу</h2>
                 <p>Селектори тегу застосовують стилі до всіх HTML-елементів відповідного типу. Наприклад, можна задати однаковий шрифт для всіх параграфів <code>&lt;p&gt;</code> або колір для всіх заголовків <code>&lt;h1&gt;</code>.</p>
@@ -460,8 +494,101 @@ ul, ol {
                 <hr>
 
                 <h3>CSS Просунутий</h3>
-                <p>Тут буде розміщено код для просунутих CSS-технік після надання.</p>
+                <p>У цьому розділі наведені приклади застосування просунутих технік CSS для створення тіней, анімацій, інтерактивних елементів та складніших макетів.</p>
+
+                <h4>1. Заокруглені кути та тіні (для блоків і тексту)</h4>
+                <p>Властивість <code>border-radius</code> створює заокруглені кути, а <code>box-shadow</code> додає тінь до блокових елементів. Властивість <code>text-shadow</code> застосовує тінь до тексту.</p>
+                <h5>Приклад CSS-коду:</h5>
+                <pre><code>.rounded-corners {
+    border-radius: 25px;
+    background: Tomato;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    box-shadow: 10px 10px 8px grey;
+}
+h2 {
+    text-shadow: 2px 2px 5px grey;
+}</code></pre>
+                <h5>HTML-код, до якого застосовуються стилі:</h5>
+                <pre><code>&lt;h2&gt;Просунуті ефекти CSS&lt;/h2&gt;
+&lt;div class="rounded-corners"&gt;&lt;/div&gt;</code></pre>
+
+                <hr>
+
+                <h4>2. Плавні переходи та анімації</h4>
+                <p>Властивість <code>transition</code> забезпечує плавні зміни стилів, а <code>@keyframes</code> разом з <code>animation</code> дозволяє створювати повноцінні анімації.</p>
+                <h5>Приклад CSS-коду:</h5>
+                <pre><code>@keyframes example-animation {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example-animation;
+    animation-duration: 4s;
+}
+.custom-button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.custom-button:hover {
+    background-color: #45a049;
+}</code></pre>
+                <h5>HTML-код, до якого застосовуються стилі:</h5>
+                <pre><code>&lt;div class="animated-box"&gt;&lt;/div&gt;
+&lt;button class="custom-button"&gt;Натисни мене&lt;/button&gt;</code></pre>
+
+                <hr>
+
+                <h4>3. Інтерактивні елементи та багатоколонковий макет</h4>
+                <p>За допомогою псевдокласу <code>:hover</code> можна створювати елементи, які з'являються при наведенні курсора. Властивість <code>column-count</code> дозволяє автоматично розділити текст на кілька колонок.</p>
+                <h5>Приклад CSS-коду:</h5>
+                <pre><code>.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.multi-column {
+    margin-top: 40px;
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 1px solid lightblue;
+}</code></pre>
+                <h5>HTML-код, до якого застосовуються стилі:</h5>
+                <pre><code>&lt;div class="dropdown"&gt;
+    &lt;span&gt;Наведіть на мене&lt;/span&gt;
+    &lt;div class="dropdown-content"&gt;
+        &lt;a href="#"&gt;Посилання 1&lt;/a&gt;
+        &lt;a href="#"&gt;Посилання 2&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="multi-column"&gt;
+    &lt;h2&gt;Історія та різноманіття чашок&lt;/h2&gt;
+    Історія чашки налічує тисячоліття, починаючись від простих дерев'яних та глиняних ємностей. У кожній культурі чашка набувала своїх унікальних рис: від витончених китайських порцелянових піал, що ідеально підходили для чайних церемоній, до масивних керамічних кухлів, популярних у середньовічній Європі для пива та елю. Сучасний світ пропонує безліч варіацій: скляні чашки для лате, термостійкі для подорожей та дизайнерські вироби, що є справжніми витворами мистецтва.
+&lt;/div&gt;</code></pre>
+
+                <h3>Результат у браузері:</h3>
+                <img src="img/laba2_css_prosunutyi.jpg" alt="Скріншот застосування просунутих CSS-технік" style="width: 100%; border: 1px solid #ccc;">
             </div>
+
 
             <div id="vysnovky-lr2" class="tab-content">
                 <h2>ВИСНОВКИ до ПР №2</h2>
