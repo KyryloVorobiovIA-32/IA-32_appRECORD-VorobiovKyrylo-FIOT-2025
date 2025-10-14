@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з практичних робіт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9e9e9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #002060;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+        }
+
+        .student-photo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20%;
+            border: 3px solid white;
+            object-fit: cover;
+        }
+
+        .lab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lab-nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #002060;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .lab-nav a:hover, .lab-nav a.active {
+            background-color: #003399;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 0 0 250px;
+        }
+
+        .sidebar-nav a, .sidebar-nav .sidebar-title {
+            display: block;
+            text-decoration: none;
+            color: white;
+            background-color: #002060;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar-nav .sidebar-title {
+            cursor: default;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: #003399;
+        }
+
+        .sidebar-nav a.active {
+            background-color: #FFD966;
+            color: #002060;
+            font-weight: bold;
+        }
+
+        .sidebar-nav .sub-item {
+            width: 85%;
+            margin-left: auto;
+        }
+
+
+        .content-area {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .content-area h2, .content-area h3 {
+            margin-top: 0;
+            color: #002060;
+        }
+        .content-area ul {
+            padding-left: 20px;
+        }
+        .content-area ul li {
+            margin-bottom: 8px;
+        }
+
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-text">
+            <h1>ЗВІТИ З ПРАКТИЧНИХ РОБІТ</h1>
+            <p>З ДИСЦИПЛІНИ «WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ, FRONTEND РОЗРОБКИ»</p>
+            <p class="student-info">Виконавець: Студент групи ІА-32 Воробйов Кирило Андрійович</p>
+        </div>
+        <div class="student-photo">
+            <img src="img/photo.jpg" alt="Фото студента">
+        </div>
+    </header>
+
+    <nav class="lab-nav">
+        <a href="index.html">Практична робота №1</a>
+        <a href="lab2.html" class="active">Практична робота №2</a>
+        <a href="lab3.html">Практична робота №3</a>
+        <a href="lab4.html">Практична робота №4</a>
+        <a href="lab5.html">Практична робота №5</a>
+        <a href="lab6.html">Практична робота №6</a>
+        <a href="lab7.html">Практична робота №7</a>
+        <a href="lab8.html">Практична робота №8</a>
+        <a href="lab9.html">Практична робота №9</a>
+    </nav>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a onclick="showContent('tema-lr2', this)">Тема, мета, ПР №2, Місце розташування сайту/звіту</a>
+                <a onclick="showContent('sposoby', this)">Способи підключення стилів</a>
+                <div class="sidebar-title">СЕЛЕКТОРИ</div>
+                <a onclick="showContent('selektory-tegu', this)" class="sub-item">Селектори тегу</a>
+                <a onclick="showContent('selektory-klasu', this)" class="sub-item">Селектори класу</a>
+                <a onclick="showContent('selektory-id', this)" class="sub-item">Селектори ідентифікаторів</a>
+                <a onclick="showContent('inshi-selektory', this)" class="sub-item">Інші селектори</a>
+                <a onclick="showContent('css-styling', this)">CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки. CSS-Просунутий</a>
+                <a onclick="showContent('vysnovky-lr2', this)">ВИСНОВКИ до ПР №2</a>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <div id="initial-message" class="tab-content active">
+                <h2>Практична робота №2</h2>
+                <p>Оберіть розділ ліворуч, щоб переглянути вміст.</p>
+            </div>
+
+            <div id="tema-lr2" class="tab-content">
+                <h2>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ ТЕГУ,КЛАСУ, ІДЕНТИФІКАТОРА. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</h2>
+                <p><strong>Мета:</strong> придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів.</p>
+                <p><strong>Посилання на виконані завдання:</strong></p>
+                <ul>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appWEB-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій власного веб-застосунку (GitHub)</a></li>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appWEB-VorobiovKyrylo-FIOT-2025/%D0%9B%D0%B0%D0%B1%D0%B0_2/index.html" target="_blank">Власний веб-застосунок (Жива сторінка)</a></li>
+                    <li><a href="#" target="_blank">Репозиторій самостійної роботи №2 (GitHub)</a></li>
+                    <li><a href="#" target="_blank">Самостійна робота №2 (Жива сторінка)</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій звітного HTML-документу</a></li>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/" target="_blank">Звітний HTML-документ (Жива сторінка)</a></li>
+                </ul>
+            </div>
+
+            <div id="selektory-tegu" class="tab-content">
+                <h2>Селектори тегу</h2>
+                <p>Селектори тегу застосовують стилі до всіх HTML-елементів відповідного типу. Наприклад, можна задати однаковий шрифт для всіх параграфів <code>&lt;p&gt;</code> або колір для всіх заголовків <code>&lt;h1&gt;</code>.</p>
+
+                <h3>Приклад CSS-коду:</h3>
+                <p>У цьому прикладі стилі застосовуються до тегів <code>body</code> (шрифт і фон для всієї сторінки) та <code>h1</code> (вирівнювання та колір для головного заголовка).</p>
+                <pre><code>/* Стилізуємо body: фон, шрифт та колір тексту для всього документа */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Стилізуємо заголовок h1 */
+h1 {
+    text-align: center;
+    color: #002060;
+}</code></pre>
+
+                <h3>HTML-код, до якого застосовуються стилі:</h3>
+                <pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Подорож у світ чашок: від давнини до майбутнього&lt;/h1&gt;
+        &lt;p&gt;Ласкаво просимо на наш сайт...&lt;/p&gt;
+    &lt;/header&gt;
+&lt;/body&gt;</code></pre>
+
+                <h3>Результат у браузері:</h3>
+                <img src="img/laba2_selektory_tegu.jpg" alt="Скріншот застосування селекторів тегу" style="width: 100%; border: 1px solid #ccc;">
+            </div>
+
+            <div id="selektory-klasu" class="tab-content">
+                <h2>Селектори класу</h2>
+                <p>Селектор класу використовується для вибору та стилізації елементів, яким присвоєно певний клас. На відміну від ID, один і той самий клас можна застосовувати до багатьох елементів на сторінці, що дозволяє створювати групи елементів з однаковим стилем.</p>
+
+                <h3>Приклад CSS-коду:</h3>
+                <p>Тут клас <code>.gallery</code> використовується для центрування блоку з зображеннями, а дочірній селектор <code>.gallery img</code> додає рамки, відступи та ефект при наведенні до кожного зображення всередині цього блоку.</p>
+                <pre><code>/* Цей клас застосовано до div-контейнера з зображеннями */
+.gallery {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Стилізуємо зображення всередині галереї */
+.gallery img {
+    margin: 10px;
+    border: 3px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Ефект при наведенні */
+}</code></pre>
+
+                <h3>HTML-код, до якого застосовуються стилі:</h3>
+                <pre><code>&lt;div class="gallery"&gt;
+    &lt;img src="../img/ancient1.jpg" alt="Стародавня глиняна чашка" width="200" height="200"&gt;
+    &lt;img src="../img/modern1.jpg" alt="Сучасна керамічна чашка" width="200" height="200"&gt;
+    &lt;img src="../img/future2.jpg" alt="Концепт чашки майбутнього" width="200" height="200"&gt;
+&lt;/div&gt;</code></pre>
+
+                <h3>Результат у браузері:</h3>
+                <img src="img/laba2_selektory_klasu.jpg" alt="Скріншот застосування селекторів класу" style="width: 100%; border: 1px solid #ccc;">
+            </div>
+
+            <div id="selektory-id" class="tab-content">
+                <h2>Селектори ідентифікаторів</h2>
+                <p>Селектор ідентифікатора (ID) використовується для вибору одного, унікального елемента на сторінці. Атрибут <code>id</code> повинен бути унікальним у межах усього HTML-документа. Це робить його ідеальним для стилізації великих унікальних блоків, таких як хедер, футер або, як у цьому прикладі, форма зворотного зв'язку.</p>
+
+                <h3>Приклад CSS-коду:</h3>
+                <p>Тут селектор <code>#contact-form</code> застосовує стилі до всього блоку форми, надаючи йому фон, рамку та внутрішні відступи для візуального відокремлення від решти контенту.</p>
+                <pre><code>/* Стилізуємо всю форму за її унікальним ID */
+#contact-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}</code></pre>
+
+                <h3>HTML-код, до якого застосовуються стилі:</h3>
+                <pre><code>&lt;form action="#" method="post" id="contact-form"&gt;
+    &lt;h2&gt;Форма для зворотного зв'язку&lt;/h2&gt;
+    &lt;p&gt;Поділіться своєю думкою або поставте запитання!&lt;/p&gt;
+    &lt;div&gt;
+        &lt;label for="user-name"&gt;Ваше ім'я:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="user-email"&gt;Ваш Email:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="cup-type"&gt;Якому типу чашок ви віддаєте перевагу?&lt;/label&gt;&lt;br&gt;
+        &lt;select id="cup-type" name="cupType"&gt;
+            &lt;option value="ceramic"&gt;Керамічні&lt;/option&gt;
+            &lt;option value="glass"&gt;Скляні&lt;/option&gt;
+            &lt;option value="porcelain"&gt;Порцелянові&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="feedback"&gt;Ваш відгук:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Напишіть тут..."&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+    &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h3>Результат у браузері:</h3>
+                <img src="img/laba2_selektory_id.jpg" alt="Скріншот застосування селектора ID" style="width: 100%; border: 1px solid #ccc;">
+            </div>
+
+            <div id="inshi-selektory" class="tab-content">
+                <h2>Інші селектори</h2>
+                <p>Окрім основних селекторів тегу, класу та ID, CSS пропонує багато інших способів для більш точного вибору елементів.</p>
+
+                <hr>
+
+                <h3>Універсальний селектор ( * )</h3>
+                <p>Застосовує стилі до абсолютно всіх елементів на сторінці. Найчастіше використовується для скидання стандартних стилів браузера (відступів <code>margin</code> та <code>padding</code>) та налаштування моделі блоку <code>box-sizing</code>.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}</code></pre>
+
+                <hr>
+
+                <h3>Дочірній селектор ( > )</h3>
+                <p>Вибирає тільки ті елементи, які є безпосередніми нащадками (дітьми) вказаного елемента. У цьому прикладі стиль застосовується тільки до тегу <code>&lt;p&gt;</code>, який знаходиться безпосередньо всередині <code>&lt;header&gt;</code>.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>header > p {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+}</code></pre>
+                <h4>HTML-код, до якого застосовуються стилі:</h4>
+                <pre><code>&lt;header&gt;
+    &lt;h1&gt;Подорож у світ чашок...&lt;/h1&gt;
+    &lt;p&gt;Ласкаво просимо на наш сайт...&lt;/p&gt; &lt;!-- Стиль застосується до цього параграфа --&gt;
+&lt;/header&gt;</code></pre>
+
+                <hr>
+
+                <h3>Селектор атрибута ( [ ] )</h3>
+                <p>Дозволяє вибирати елементи на основі наявності або значення їх атрибутів. У прикладі нижче ми вибираємо всі теги <code>&lt;input&gt;</code>, у яких атрибут <code>type</code> має значення <code>"text"</code> або <code>"email"</code>, а також теги <code>&lt;select&gt;</code> та <code>&lt;textarea&gt;</code>.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}</code></pre>
+                <h4>HTML-код, до якого застосовуються стилі:</h4>
+                <pre><code>&lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
+&lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
+&lt;select id="cup-type" name="cupType"&gt; ... &lt;/select&gt;
+&lt;textarea id="feedback" name="feedback" ...&gt;&lt;/textarea&gt;</code></pre>
+                <h3>Результат у браузері:</h3>
+                <p>Нижче наведено скріншот, що демонструє роботу дочірнього селектора та селектора атрибута.</p>
+                <img src="img/laba2_inshi_selektory.jpg" alt="Скріншот застосування інших селекторів" style="width: 100%; border: 1px solid #ccc;">
+                <img src="img/laba2_inshi_selektory2.png" alt="Скріншот застосування інших селекторів" style="width: 100%; border: 1px solid #ccc;">
+            </div>
+
+            <div id="css-styling" class="tab-content">
+                <h2>CSS: Шрифти, Текст, Таблиці, Фон, Контур, Списки</h2>
+                <p>У цьому розділі наведені приклади застосування різних CSS-властивостей для стилізації елементів веб-сторінки згідно з завданням.</p>
+
+                <hr>
+
+                <h3>Шрифти та Колір тексту</h3>
+                <p>Властивість <code>font-family</code> задає гарнітуру шрифту для тексту, а <code>color</code> — його колір.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>/* Задаємо базовий шрифт для всієї сторінки */
+body {
+    font-family: Arial, sans-serif;
+    color: #333; /* Основний колір тексту */
+}
+
+/* Задаємо інший колір для головного заголовка */
+h1 {
+    color: #002060;
+}</code></pre>
+
+                <hr>
+
+                <h3>Фон</h3>
+                <p>Властивість <code>background-color</code> встановлює колір фону для елемента.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>/* Задаємо темно-синій фон для заголовка таблиці */
+thead {
+    background-color: #002060;
+    color: white; /* Колір тексту на цьому фоні робимо білим */
+}</code></pre>
+
+                <hr>
+
+                <h3>Контури</h3>
+                <p>Властивість <code>outline</code> дозволяє додати контур навколо елемента, який не є частиною його розмірів. Це часто використовується для візуального виділення активних елементів, наприклад, полів форми при фокусуванні.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>/* Додаємо синій контур при фокусі на полях вводу */
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #003399;
+}</code></pre>
+
+                <hr>
+
+                <h3>CSS-властивості для Таблиць та Списків</h3>
+                <p>Для таблиць часто використовують <code>border-collapse</code>, щоб об'єднати рамки комірок. Для списків — <code>padding-left</code> для керування відступом.</p>
+                <h4>Приклад CSS-коду:</h4>
+                <pre><code>/* Стилі для таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Прибирає подвійні рамки */
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+/* Стилі для списків */
+ul, ol {
+    padding-left: 40px; /* Відступ зліва для маркерів/нумерації */
+}</code></pre>
+
+                <h3>Результат у браузері:</h3>
+                <p>На скріншоті нижче показано стилізовану таблицю (фон заголовка, рамки), а також поля форми (контур при фокусі).</p>
+                <img src="img/laba2_css_styling.jpg" alt="Скріншот застосування стилів CSS" style="width: 100%; border: 1px solid #ccc;">
+                <img src="img/laba2_css_styling1.jpg" alt="Скріншот застосування стилів CSS" style="width: 100%; border: 1px solid #ccc;">
+
+                <hr>
+
+                <h3>CSS Просунутий</h3>
+                <p>Тут буде розміщено код для просунутих CSS-технік після надання.</p>
+            </div>
+
+            <div id="vysnovky-lr2" class="tab-content">
+                <h2>ВИСНОВКИ до ПР №2</h2>
+                <p>Під час виконання практичної роботи №2 я здобув глибокі практичні навички роботи з каскадними таблицями стилів (CSS). Я навчився застосовувати різні види селекторів — тегу, класу та ідентифікатора, а також їх комбінації — для точного вибору та стилізації елементів на веб-сторінці.</p>
+                <p>Були опановані ключові CSS-властивості для оформлення тексту, шрифтів, фону, контурів та таблиць, що дозволило значно покращити візуальний вигляд мого веб-застосунку "Світ Чашок", зробивши його більш структурованим та привабливим для користувача. Ця робота закріпила розуміння того, як CSS взаємодіє з HTML для створення сучасних та функціональних веб-сторінок.</p>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    function showContent(contentId, clickedElement) {
+        // Ховаємо всі блоки з контентом
+        const allContent = document.querySelectorAll('.tab-content');
+        allContent.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Знаходимо і показуємо потрібний блок
+        const targetContent = document.getElementById(contentId);
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+
+        // Робота з активним станом кнопок
+        const allButtons = document.querySelectorAll('.sidebar-nav a');
+        allButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        if (clickedElement) {
+            clickedElement.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
