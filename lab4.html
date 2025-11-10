@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з практичних робіт</title>
+    <title>Звіти з практичних робіт - ПР №4</title>
     <style>
+        /* ... (всі стилі залишаються ті самі, що й раніше) ... */
         body {
             font-family: Arial, sans-serif;
             background-color: #e9e9e9;
             margin: 0;
             padding: 20px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -20,7 +20,6 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         header {
             background-color: #002060;
             color: white;
@@ -31,22 +30,18 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .header-text {
             text-align: center;
             flex-grow: 1;
         }
-
         header h1 {
             margin: 0;
             font-size: 1.8em;
         }
-
         header p {
             margin: 5px 0 0;
             font-size: 1.1em;
         }
-
         .student-photo img {
             width: 100px;
             height: 100px;
@@ -54,7 +49,6 @@
             border: 3px solid white;
             object-fit: cover;
         }
-
         .lab-nav {
             display: flex;
             justify-content: center;
@@ -62,7 +56,6 @@
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-
         .lab-nav a {
             text-decoration: none;
             color: white;
@@ -71,20 +64,16 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .lab-nav a:hover, .lab-nav a.active {
             background-color: #003399;
         }
-
         .main-content {
             display: flex;
             gap: 20px;
         }
-
         .sidebar {
             flex: 0 0 250px;
         }
-
         .sidebar-nav a, .sidebar-nav .sidebar-title {
             display: block;
             text-decoration: none;
@@ -97,27 +86,22 @@
             transition: background-color 0.3s;
             cursor: pointer;
         }
-
         .sidebar-nav .sidebar-title {
             cursor: default;
+            font-weight: bold;
         }
-
         .sidebar-nav a:hover {
             background-color: #003399;
         }
-
         .sidebar-nav a.active {
             background-color: #FFD966;
             color: #002060;
             font-weight: bold;
         }
-
         .sidebar-nav .sub-item {
             width: 85%;
             margin-left: auto;
         }
-
-
         .content-area {
             flex-grow: 1;
             border: 1px solid #ccc;
@@ -125,15 +109,12 @@
             border-radius: 8px;
             min-height: 400px;
         }
-
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
         }
-
         .content-area h2, .content-area h3 {
             margin-top: 0;
             color: #002060;
@@ -144,8 +125,6 @@
         .content-area ul li {
             margin-bottom: 8px;
         }
-
-
         pre {
             background-color: #f4f4f4;
             padding: 15px;
@@ -155,10 +134,22 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-
         code {
             font-family: 'Courier New', Courier, monospace;
             color: #333;
+        }
+        .screenshot-placeholder {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+        .screenshot-placeholder img {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
@@ -191,337 +182,479 @@
     <div class="main-content">
         <aside class="sidebar">
             <nav class="sidebar-nav">
-                <a onclick="showContent('tema', this)">Тема, мета, місце розташування</a>
-                <a onclick="showContent('opis', this)">Опис предметного середовища</a>
-                <div class="sidebar-title">Структура документа</div>
-                <a onclick="showContent('tables', this)" class="sub-item">HTML-код таблиць</a>
-                <a onclick="showContent('images', this)" class="sub-item">HTML-код зображення</a>
-                <a onclick="showContent('forms', this)" class="sub-item">HTML-код форми</a>
-                <a onclick="showContent('main-page-code', this)">Код головної сторінки</a>
-                <a onclick="showContent('vysnovky', this)">Висновки</a>
+                <a onclick="showContent('tema-lr4', this)">Тема, Мета, Місце розташування сайту, звіту</a>
+                <a onclick="showContent('zavdannya1', this)">ЗАВДАННЯ №1</a>
+                <a onclick="showContent('zavdannya2', this)">ЗАВДАННЯ №2</a>
+                <a onclick="showContent('zavdannya3', this)">ЗАВДАННЯ №3</a>
+                <a onclick="showContent('zavdannya4', this)">ЗАВДАННЯ №4</a>
+                <a onclick="showContent('zavdannya5', this)">ЗАВДАННЯ №5</a>
+                <a onclick="showContent('zavdannya6', this)">ЗАВДАННЯ №6</a>
+                <a onclick="showContent('zavdannya7', this)">ЗАВДАННЯ №7</a>
+                <a onclick="showContent('zavdannya8', this)">ЗАВДАННЯ №8</a>
+                <a onclick="showContent('zavdannya9', this)">ЗАВДАННЯ №9</a>
+                <a onclick="showContent('vysnovky-lr4', this)">ВИСНОВКИ</a>
             </nav>
         </aside>
 
         <main class="content-area">
             <div id="initial-message" class="tab-content active">
-                <h2>Вітаю!</h2>
+                <h2>Практична робота №4</h2>
                 <p>Оберіть розділ ліворуч, щоб переглянути вміст.</p>
             </div>
 
-            <div id="tema" class="tab-content">
-                <h2>СТРУКТУРА HTML-ДОКУМЕНТА, ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ, РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ В HTML-ДОКУМЕНТІ</h2>
-                <p><strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.</p>
-                <p><strong>Посилання на виконані завдання лабораторної роботи:</strong></p>
+            <div id="tema-lr4" class="tab-content">
+                <h2>Тема, Мета, Місце розташування сайту, звіту</h2>
+                <h3>Тема: ОСНОВИ JAVASCRIPT У HTML-ДОКУМЕНТІ. ШАБЛОНІ РЯДКИ. КЕРУВАННЯ ПОРЯДКОМ ОБЧИСЛЕНЬ. МАСИВИ. МЕТОДИ МАСИВІВ. ФУНКЦІЇ</h3>
+                <p><strong>Мета:</strong> придбати практичні навички роботи з конструкціями мови JS, масивами та функціями у js-сценаріях.</p>
+                <p><strong>Посилання на репозиторії:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appWEB-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій власного веб-застосунку (GitHub)</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appWEB-VorobiovKyrylo-FIOT-2025/%D0%9B%D0%B0%D0%B1%D0%B0_1/index.html" target="_blank">Власний веб-застосунок (Жива сторінка)</a></li>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_INDEPENDENT-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій самостійної роботи №1 (GitHub)</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_INDEPENDENT-VorobiovKyrylo-FIOT-2025/%D0%A1%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D1%96%D0%B9%D0%BD%D0%B0%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B0_1/index.html" target="_blank">Самостійна робота №1 (Жива сторінка)</a></li>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій звітного HTML - документу</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/" target="_blank">Звітний HTML - документ (Жива сторінка)</a></li>
-                    <li><a href="#" target="_blank">Дизайн мобільного застосунку (Figma)</a></li>
-                    <li><a href="#" target="_blank">Дизайн постера (Figma)</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appWEB-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій власного WEB-застосунку</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій звітного HTML-документу</a></li>
+                </ul>
+                <p><strong>Посилання на живі сторінки:</strong></p>
+                <ul>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/lab4.html" target="_blank">Жива сторінка WEB-застосунку (ПР №4)</a></li>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/lab4.html" target="_blank">Жива сторінка звітного HTML-документу (ПР №4)</a></li>
                 </ul>
             </div>
 
-            <div id="opis" class="tab-content">
-                <h2>Опис предметного середовища</h2>
-                <p>Майбутній веб-застосунок присвячений чашкам різних видів та культур.</p>
-                <h3>Основний функціонал:</h3>
-                <ul>
-                    <li>Інформаційні сторінки з описом видів та типів чашок (чайні, кавові, декоративні, колекційні).</li>
-                    <li>Розділ з історією виникнення та розвитку чашок у різних країнах.</li>
-                    <li>Галерея зображень чашок з описом.</li>
-                    <li>Каталог чашок з можливістю сортування та фільтрації:
-                        <ul>
-                            <li>за матеріалом (фарфор, скло, глина, метал);</li>
-                            <li>за об’ємом;</li>
-                            <li>за країною походження.</li>
-                        </ul>
-                    </li>
-                    <li>Пошук чашки за назвою.</li>
-                    <li>Сторінка з цікавими фактами про чашки.</li>
-                    <li>Форма для зворотного зв’язку (ім’я, email, коментар).</li>
-                </ul>
-                <h3>Бізнес-логіка (сценарій користувача)</h3>
-                <p>Користувач заходить на сайт. Вибирає розділ: «Каталог», «Історія», «Галерея», «Факти», «Про сайт». У каталозі користувач може:</p>
-                <ul>
-                    <li>переглянути список чашок;</li>
-                    <li>відфільтрувати за типом, матеріалом, країною;</li>
-                    <li>відсортувати за популярністю, алфавітом або датою додавання.</li>
-                </ul>
-                <p>У галереї переглядає фото чашок з описами. У розділі «Історія» читає текстову інформацію. На сторінці «Цікаві факти» знайомиться з короткими цікавими матеріалами. Використовує форму зворотного зв’язку для відгуків чи пропозицій.</p>
-                <h3>Функціональні вимоги</h3>
-                <ul>
-                    <li>Відображення інформаційних сторінок (опис чашок, історія, факти).</li>
-                    <li>Галерея зображень чашок.</li>
-                    <li>Каталог з можливістю: пошуку за назвою; фільтрації за матеріалом/типом/країною; сортування (за алфавітом, популярністю, датою).</li>
-                    <li>Форма зворотного зв’язку.</li>
-                    <li>Меню навігації для переходу між сторінками.</li>
-                </ul>
-                <h3>Нефункціональні вимоги</h3>
-                <ul>
-                    <li>Адаптивність для ПК та мобільних пристроїв.</li>
-                    <li>Зручний та інтуїтивний інтерфейс.</li>
-                    <li>Швидке завантаження сторінок (≤ 3 секунд).</li>
-                    <li>Кросбраузерність (Chrome, Firefox, Edge, Safari).</li>
-                    <li>Мінімалістичний дизайн з акцентом на контент.</li>
-                    <li>Легке розширення каталогу (можливість додати нові чашки).</li>
-                </ul>
+            <div id="zavdannya1" class="tab-content">
+                <h2>ЗАВДАННЯ №1 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Перевірити, до якої чверті години відноситься введене значення часу.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task1_cond.jpg" alt="Скріншот умови завдання 1">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function runTask1() {
+    const timeInput = prompt("Введіть час у форматі 'год:хв' (наприклад, 14:30):");
+    if (!timeInput) return;
+    console.log(`Завдання 1: Введений час: ${timeInput}`);
+    const parts = timeInput.split(':');
+    if (parts.length !== 2) {
+        alert("Невірний формат. Введіть 'год:хв'.");
+        return;
+    }
+    const minutes = parseInt(parts[1]);
+    if (isNaN(minutes) || minutes &lt; 0 || minutes &gt; 59) {
+        alert("Невірне значення хвилин.");
+        return;
+    }
+    let quarter = "";
+    if (minutes &gt;= 0 &amp;&amp; minutes &lt;= 14) quarter = "Перша чверть години";
+    else if (minutes &gt;= 15 &amp;&amp; minutes &lt;= 29) quarter = "Друга чверть години";
+    else if (minutes &gt;= 30 &amp;&amp; minutes &lt;= 44) quarter = "Третя чверть години";
+    else quarter = "Четверта чверть години";
+
+    console.log(`Результат: ${quarter}`);
+    alert(quarter);
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task1_site.jpg" alt="Скріншот виконання завдання 1">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task1_console.jpg" alt="Скріншот консолі для завдання 1">
+                </div>
             </div>
 
-            <div id="vysnovky" class="tab-content">
-                <h2>Висновки</h2>
-                <p>В ході виконання лабораторної роботи я придбав практичні навички роботи з основними елементами HTML. Я навчився створювати структуру веб-документа, використовуючи семантичні теги, розробив концепцію предметної галузі для майбутнього веб-застосунку та визначив його функціональні та нефункціональні вимоги. Також я опанував роботу з посиланнями, списками, таблицями та зображеннями, що дозволило мені створити цей звітний HTML-документ, який є основою для всіх наступних лабораторних робіт.</p>
+            <div id="zavdannya2" class="tab-content">
+                <h2>ЗАВДАННЯ №2 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>За номером дня тижня (1-7) вивести його назву.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task2_cond.jpg" alt="Скріншот умови завдання 2">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function runTask2() {
+    const day = prompt("Введіть номер дня тижня (1-7):");
+    let finish = "";
+    switch (day) {
+        case '1': finish = 'понеділок'; break;
+        case '2': finish = 'вівторок'; break;
+        case '3': finish = 'середа'; break;
+        case '4': finish = 'четвер'; break;
+        case '5': finish = "п'ятниця"; break;
+        case '6': finish = 'субота'; break;
+        case '7': finish = 'неділя'; break;
+        default:
+            finish = 'Невірний номер дня (введіть число від 1 до 7)';
+    }
+    console.log(`Завдання 2: Результат: ${finish}`);
+    alert(`Результат: ${finish}. (Також див. консоль)`);
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task2_site.jpg" alt="Скріншот виконання завдання 2">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task2_console.jpg" alt="Скріншот консолі для завдання 2">
+                </div>
             </div>
 
-            <div id="tables" class="tab-content">
-                <h2>HTML-код таблиць</h2>
-                <h3>Теоретичні відомості про теги для таблиць</h3>
-                <p>Для створення таблиць в HTML використовується набір тегів, кожен з яких виконує свою роль:</p>
-                <ul>
-                    <li><strong>&lt;table&gt;</strong> — основний тег-контейнер, який оголошує створення таблиці. Атрибут <code>border="1"</code> є застарілим способом додати рамку, сьогодні для цього переважно використовують CSS.</li>
-                    <li><strong>&lt;thead&gt;</strong> — (table head) групує рядки, що є заголовком таблиці.</li>
-                    <li><strong>&lt;tbody&gt;</strong> — (table body) групує основні рядки з даними таблиці.</li>
-                    <li><strong>&lt;tr&gt;</strong> — (table row) створює новий рядок у таблиці.</li>
-                    <li><strong>&lt;th&gt;</strong> — (table header) створює комірку-заголовок усередині рядка. Текст у такій комірці за замовчуванням є жирним та вирівняним по центру.</li>
-                    <li><strong>&lt;td&gt;</strong> — (table data) створює звичайну комірку з даними всередині рядка.</li>
-                </ul>
-                <p>Код для створення порівняльної таблиці матеріалів з лабораторної роботи №1:</p>
-                <pre><code>&lt;h3&gt;Порівняльна таблиця матеріалів&lt;/h3&gt;
-&lt;table border="1"&gt;
-    &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Матеріал&lt;/th&gt;
-        &lt;th&gt;Переваги&lt;/th&gt;
-        &lt;th&gt;Епоха&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Глина&lt;/td&gt;
-        &lt;td&gt;Доступність, простота виготовлення&lt;/td&gt;
-        &lt;td&gt;Стародавній світ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Порцеляна&lt;/td&gt;
-        &lt;td&gt;Естетичність, зберігання тепла&lt;/td&gt;
-        &lt;td&gt;Середньовіччя - Новий час&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Скло&lt;/td&gt;
-        &lt;td&gt;Хімічна інертність, прозорість&lt;/td&gt;
-        &lt;td&gt;Новий час - Сучасність&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;"Розумний" пластик&lt;/td&gt;
-        &lt;td&gt;Легкість, додаткові функції&lt;/td&gt;
-        &lt;td&gt;Майбутнє&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_таблиць.jpg" alt="">
+            <div id="zavdannya3" class="tab-content">
+                <h2>ЗАВДАННЯ №3 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Авторизація користувачів (User1, User2, User3) з перевіркою пароля.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task3_cond.jpg" alt="Скріншот умови завдання 3">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function runTask3() {
+    const users = {
+        'User1': 'pass1',
+        'User2': 'pass2',
+        'User3': 'pass3'
+    };
+    let login = '';
+    let result = '';
+
+    while (login === '' || login === null) {
+        login = prompt("Введіть логін (User1, User2 або User3):");
+        if (login === null) {
+            result = 'Cancelled';
+            console.log(`Завдання 3: Результат: ${result}`);
+            alert(result);
+            return;
+        }
+    }
+    console.log(`Завдання 3: Введений логін: ${login}`);
+    if (users.hasOwnProperty(login)) {
+        const password = prompt("Введіть пароль:");
+        if (password === users[login]) {
+            result = `Hello, ${login}`;
+        } else {
+            result = "I don't know you";
+        }
+    } else {
+        result = "I don't know you";
+    }
+    console.log(`Завдання 3: Результат: ${result}`);
+    alert(result);
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task3_site.jpg" alt="Скріншот виконання завдання 3">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task3_console.jpg" alt="Скріншот консолі для завдання 3">
+                </div>
             </div>
 
-            <div id="images" class="tab-content">
-                <h2>HTML-код зображення</h2>
-                <h3>Теоретичні відомості про теги для зображень</h3>
-                <p>Для вставки зображень на веб-сторінку використовується одинарний (непарний) тег <strong>&lt;img&gt;</strong>. Він має декілька ключових атрибутів:</p>
-                <ul>
-                    <li><strong>src</strong> (source) — найголовніший атрибут, який вказує шлях (URL) до файлу зображення.</li>
-                    <li><strong>alt</strong> (alternative text) — задає альтернативний текст, який буде відображатися, якщо зображення не завантажиться. Цей текст також важливий для доступності (для скрінрідерів) та для пошукової оптимізації (SEO).</li>
-                    <li><strong>width</strong> — визначає ширину зображення в пікселях.</li>
-                    <li><strong>height</strong> — визначає висоту зображення в пікселях. Задавати розміри є гарною практикою, оскільки браузер резервує місце для зображення ще до його повного завантаження, що запобігає "стрибкам" контенту.</li>
-                </ul>
-                <p>Код для відображення галереї зображень з лабораторної роботи №1:</p>
-                <pre><code>&lt;div&gt;
-    &lt;h2&gt;Різноманітність чашок крізь епохи&lt;/h2&gt;
-    &lt;p&gt;Від простих глиняних виробів до високотехнологічних гаджетів.&lt;/p&gt;
+            <div id="zavdannya4" class="tab-content">
+                <h2>ЗАВДАННЯ №4 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Функція `getShippingMessage` для розрахунку вартості доставки.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task4_cond.jpg" alt="Скріншот умови завдання 4">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function getShippingMessage(country, price, deliveryFee) {
+    const totalPrice = price + deliveryFee;
+    return `Shipping to ${country} will cost ${totalPrice} credits`;
+}
 
-    &lt;div&gt;
-        &lt;img src="../img/ancient1.jpg" alt="Стародавня глиняна чашка" width="200" height="200"&gt;
-        &lt;img src="../img/modern1.jpg" alt="Сучасна керамічна чашка" width="200" height="200"&gt;
-        &lt;img src="../img/future2.jpg" alt="Концепт чашки майбутнього" width="200" height="200"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_зображень.jpg" alt="">
+function runTask4() {
+    console.log("Завдання 4:");
+    const msg1 = getShippingMessage("Ukraine", 1000, 50);
+    console.log(msg1);
+    const msg2 = getShippingMessage("Poland", 800, 100);
+    console.log(msg2);
+    alert("Результати в консолі.");
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task4_site.jpg" alt="Скріншот виконання завдання 4">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task4_console.jpg" alt="Скріншот консолі для завдання 4">
+                </div>
             </div>
 
-            <div id="forms" class="tab-content">
-                <h2>HTML-код форми</h2>
-                <h3>Теоретичні відомості про теги для списків</h3>
-                <p>У вашій роботі було використано два основних типи списків для структурування даних:</p>
-                <ul>
-                    <li><strong>&lt;ul&gt;</strong> (unordered list) — створює маркований список. Кожен елемент списку за замовчуванням позначається маркером (зазвичай кружечком).</li>
-                    <li><strong>&lt;ol&gt;</strong> (ordered list) — створює нумерований список. Кожен елемент автоматично нумерується (1, 2, 3...).</li>
-                    <li><strong>&lt;li&gt;</strong> (list item) — цим тегом позначається кожен окремий пункт як у маркованому, так і в нумерованому списку. Тег &lt;li&gt; завжди розміщується всередині контейнерів &lt;ul&gt; або &lt;ol&gt;.</li>
-                </ul>
-                <p>Код для створення форми зворотного зв'язку з лабораторної роботи №1:</p>
-                <pre><code>&lt;h2&gt;Форма для зворотного зв'язку&lt;/h2&gt;
-&lt;p&gt;Поділіться своєю думкою або поставте запитання!&lt;/p&gt;
-&lt;form action="#" method="post"&gt;
-    &lt;div&gt;
-        &lt;label for="user-name"&gt;Ваше ім'я:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="user-email"&gt;Ваш Email:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="cup-type"&gt;Якому типу чашок ви віддаєте перевагу?&lt;/label&gt;&lt;br&gt;
-        &lt;select id="cup-type" name="cupType"&gt;
-            &lt;option value="ceramic"&gt;Керамічні&lt;/option&gt;
-            &lt;option value="glass"&gt;Скляні&lt;/option&gt;
-            &lt;option value="porcelain"&gt;Порцелянові&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="feedback"&gt;Ваш відгук:&lt;/label&gt;&lt;br&gt;
-        &lt;textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Напишіть тут..."&gt;&lt;/textarea&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_форми.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_списки.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_посилання.jpg" alt="">
+            <div id="zavdannya5" class="tab-content">
+                <h2>ЗАВДАННЯ №5 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Функція `makeTransaction` для перевірки коштів клієнта при купівлі дроїдів.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task5_cond.jpg" alt="Скріншот умови завдання 5">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function makeTransaction(quantity, pricePerDroid, customerCredits) {
+    const totalPrice = quantity * pricePerDroid;
+    if (totalPrice &gt; customerCredits) {
+        return "Insufficient funds!";
+    }
+    return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+}
+
+function runTask5() {
+    console.log("Завдання 5:");
+    console.log(makeTransaction(5, 300, 2000));
+    console.log(makeTransaction(10, 300, 2000));
+    console.log(makeTransaction(7, 500, 3500));
+    alert("Результати в консолі.");
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task5_site.jpg" alt="Скріншот виконання завдання 5">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task5_console.jpg" alt="Скріншот консолі для завдання 5">
+                </div>
             </div>
 
-            <div id="main-page-code" class="tab-content">
-                <h2>Код головної сторінки</h2>
-                <p>Повний код файлу `index.html` з лабораторної роботи №1:</p>
-                <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="uk"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Світ Чашок: Історія та Сучасність&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+            <div id="zavdannya6" class="tab-content">
+                <h2>ЗАВДАННЯ №6 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Функція `makeArray`, яка об'єднує два масиви з обмеженням `maxLength`.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task6_cond.jpg" alt="Скріншот умови завдання 6">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function makeArray(firstArray, secondArray, maxLength) {
+    const newArray = firstArray.concat(secondArray);
+    if (newArray.length &gt; maxLength) {
+        return newArray.slice(0, maxLength);
+    }
+    return newArray;
+}
 
-&lt;header&gt;
-    &lt;h1&gt;Подорож у світ чашок: від давнини до майбутнього&lt;/h1&gt;
-    &lt;p&gt;Ласкаво просимо на наш сайт, присвячений історії, сучасності та майбутньому такого звичного предмета, як чашка.&lt;/p&gt;
-&lt;/header&gt;
-
-&lt;main&gt;
-    &lt;div&gt;
-        &lt;h2&gt;Різноманітність чашок крізь епохи&lt;/h2&gt;
-        &lt;p&gt;Від простих глиняних виробів до високотехнологічних гаджетів.&lt;/p&gt;
-
-        &lt;div&gt;
-            &lt;img src="../img/ancient1.jpg" alt="Стародавня глиняна чашка" width="200" height="200"&gt;
-            &lt;img src="../img/modern1.jpg" alt="Сучасна керамічна чашка" width="200" height="200"&gt;
-            &lt;img src="../img/future2.jpg" alt="Концепт чашки майбутнього" width="200" height="200"&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;hr&gt;
-
-    &lt;h3&gt;Порівняльна таблиця матеріалів&lt;/h3&gt;
-    &lt;table border="1"&gt;
-        &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Матеріал&lt;/th&gt;
-            &lt;th&gt;Переваги&lt;/th&gt;
-            &lt;th&gt;Епоха&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Глина&lt;/td&gt;
-            &lt;td&gt;Доступність, простота виготовлення&lt;/td&gt;
-            &lt;td&gt;Стародавній світ&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Порцеляна&lt;/td&gt;
-            &lt;td&gt;Естетичність, зберігання тепла&lt;/td&gt;
-            &lt;td&gt;Середньовіччя - Новий час&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Скло&lt;/td&gt;
-            &lt;td&gt;Хімічна інертність, прозорість&lt;/td&gt;
-            &lt;td&gt;Новий час - Сучасність&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;"Розумний" пластик&lt;/td&gt;
-            &lt;td&gt;Легкість, додаткові функції&lt;/td&gt;
-            &lt;td&gt;Майбутнє&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;hr&gt;
-
-    &lt;h3&gt;Класифікація чашок&lt;/h3&gt;
-
-    &lt;h4&gt;За призначенням:&lt;/h4&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Чайні&lt;/li&gt;
-        &lt;li&gt;Кавові (еспресо, американо, лате)&lt;/li&gt;
-        &lt;li&gt;Бульйонні&lt;/li&gt;
-        &lt;li&gt;Дитячі&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;h4&gt;Основні етапи еволюції:&lt;/h4&gt;
-    &lt;ol&gt;
-        &lt;li&gt;Первісні ємності з дерева та каменю&lt;/li&gt;
-        &lt;li&gt;Винайдення гончарства та глиняні вироби&lt;/li&gt;
-        &lt;li&gt;Відкриття порцеляни в Китаї&lt;/li&gt;
-        &lt;li&gt;Промислова революція та масове виробництво&lt;/li&gt;
-        &lt;li&gt;Сучасні дизайнерські та технологічні рішення&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;hr&gt;
-
-    &lt;h2&gt;Форма для зворотного зв'язку&lt;/h2&gt;
-    &lt;p&gt;Поділіться своєю думкою або поставте запитання!&lt;/p&gt;
-    &lt;form action="#" method="post"&gt;
-        &lt;div&gt;
-            &lt;label for="user-name"&gt;Ваше ім'я:&lt;/label&gt;&lt;br&gt;
-            &lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="user-email"&gt;Ваш Email:&lt;/label&gt;&lt;br&gt;
-            &lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="cup-type"&gt;Якому типу чашок ви віддаєте перевагу?&lt;/label&gt;&lt;br&gt;
-            &lt;select id="cup-type" name="cupType"&gt;
-                &lt;option value="ceramic"&gt;Керамічні&lt;/option&gt;
-                &lt;option value="glass"&gt;Скляні&lt;/option&gt;
-                &lt;option value="porcelain"&gt;Порцелянові&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="feedback"&gt;Ваш відгук:&lt;/label&gt;&lt;br&gt;
-            &lt;textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Напишіть тут..."&gt;&lt;/textarea&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
-    &lt;/form&gt;
-
-&lt;/main&gt;
-
-&lt;footer&gt;
-    &lt;hr&gt;
-    &lt;p&gt;Для детального аналізу нашого проєкту, будь ласка, перегляньте сторінку з описом.&lt;/p&gt;
-    &lt;a href="details.html"&gt;Дізнатися більше про предметну галузь та бізнес-логіку&lt;/a&gt;
-    &lt;p&gt;&amp;copy; 2025 Світ Чашок&lt;/p&gt;
-&lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_гол.сторінка1.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_гол.сторінка2.jpg" alt="">
+function runTask6() {
+    console.log("Завдання 6:");
+    console.log(makeArray([1, 2, 3], [4, 5, 6], 4));
+    console.log(makeArray(["a", "b"], ["c"], 5));
+    console.log(makeArray([1], [2], 0));
+    alert("Результати в консолі.");
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task6_site.jpg" alt="Скріншот виконання завдання 6">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task6_console.jpg" alt="Скріншот консолі для завдання 6">
+                </div>
             </div>
+
+            <div id="zavdannya7" class="tab-content">
+                <h2>ЗАВДАННЯ №7 (Варіант 6)</h2>
+                <h3>Умова завдання:</h3>
+                <p>1. Обчислити суму елементів масиву між max та min. 2. Відсортувати масив методом "Швидкого сортування" (Quick Sort).</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task7_cond.jpg" alt="Скріншот умови завдання 7">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function runTask7() {
+    console.log("Завдання 7:");
+    const size = parseInt(prompt("Введіть розмір масиву для Завдання 7:"));
+    if (isNaN(size) || size &lt;= 0) {
+        alert("Введіть коректне число.");
+        return;
+    }
+    const arr = Array.from({length: size}, () => Math.floor(Math.random() * 201) - 100);
+    console.log("Початковий масив:", arr);
+    let min = Infinity, max = -Infinity, minIndex = -1, maxIndex = -1;
+    arr.forEach((val, index) => {
+        if (val &lt; min) { min = val; minIndex = index; }
+        if (val &gt; max) { max = val; maxIndex = index; }
+    });
+    const start = Math.min(minIndex, maxIndex) + 1;
+    const end = Math.max(minIndex, maxIndex);
+    let sum = 0;
+    if (end - start &gt; 0) {
+        for (let i = start; i &lt; end; i++) {
+            sum += arr[i];
+        }
+    }
+    console.log(`Min: ${min} (індекс ${minIndex}), Max: ${max} (індекс ${maxIndex})`);
+    console.log(`Сума елементів між ними: ${sum}`);
+
+    function quickSort(array) {
+        if (array.length &lt;= 1) {
+            return array;
+        }
+        let pivot = array[0];
+        let left = [];
+        let right = [];
+        for (let i = 1; i &lt; array.length; i++) {
+            array[i] &lt; pivot ? left.push(array[i]) : right.push(array[i]);
+        }
+        return [...quickSort(left), pivot, ...quickSort(right)];
+    };
+
+    const sortedArr = quickSort(arr.slice());
+    console.log("Відсортований масив (Quick Sort):", sortedArr);
+    alert("Результати в консолі.");
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task7_site.jpg" alt="Скріншот виконання завдання 7">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task7_console.jpg" alt="Скріншот консолі для завдання 7">
+                </div>
+            </div>
+
+            <div id="zavdannya8" class="tab-content">
+                <h2>ЗАВДАННЯ №8 (Парний варіант)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Операції з масивом: зберегти перший/останній елементи, вставити '25' після другого.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task8_cond.jpg" alt="Скріншот умови завдання 8">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function runTask8() {
+    console.log("Завдання 8:");
+    const arr = Array.from({length: 10}, () => Math.floor(Math.random() * 201) - 100);
+    console.log("Початковий масив:", arr);
+    const firstEl = arr[0];
+    const lastEl = arr[arr.length - 1];
+    console.log(`Перший елемент: ${firstEl}, Останній елемент: ${lastEl}`);
+    arr.splice(2, 0, 25);
+    console.log("Змінений масив (з 25):", arr);
+    alert("Результати в консолі.");
+}
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task8_site.jpg" alt="Скріншот виконання завдання 8">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task8_console.jpg" alt="Скріншот консолі для завдання 8">
+                </div>
+            </div>
+
+            <div id="zavdannya9" class="tab-content">
+                <h2>ЗАВДАННЯ №9 (Варіант 6)</h2>
+                <h3>Умова завдання:</h3>
+                <p>Календар: реалізувати вибір дати у елемент форми з спеціального візуального компоненту.</p>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task9_cond.jpg" alt="Скріншот умови завдання 9">
+                </div>
+                <h3>Програмний код:</h3>
+                <pre><code>
+function createCalendar(wrapperId, inputId) {
+    const wrapper = document.getElementById(wrapperId);
+    const input = document.getElementById(inputId);
+    let currentDate = new Date();
+
+    function renderCalendar() {
+        wrapper.innerHTML = '';
+        const month = currentDate.getMonth();
+        const year = currentDate.getFullYear();
+        const monthNames = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+
+        // 1. Створення Хедера (Місяць, Рік, Кнопки)
+        const header = document.createElement('div');
+        header.id = 'calendar-header';
+        header.innerHTML = `
+            &lt;button id="prev-month"&gt;&lt;&lt;&lt;/button&gt;
+            &lt;span&gt;${monthNames[month]} ${year}&lt;/span&gt;
+            &lt;button id="next-month"&gt;&gt;&gt;&lt;/button&gt;
+        `;
+        wrapper.appendChild(header);
+
+        // 2. Створення сітки днів тижня
+        const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
+        const weekdaysGrid = document.createElement('div');
+        weekdaysGrid.className = 'calendar-weekdays';
+        weekdays.forEach(day =&gt; {
+            const dayEl = document.createElement('div');
+            dayEl.textContent = day;
+            weekdaysGrid.appendChild(dayEl);
+        });
+        wrapper.appendChild(weekdaysGrid);
+
+        // 3. Створення сітки днів
+        const grid = document.createElement('div');
+        grid.className = 'calendar-grid';
+
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const offset = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
+
+        for (let i = 0; i &lt; offset; i++) {
+            const emptyEl = document.createElement('div');
+            emptyEl.className = 'calendar-day empty';
+            grid.appendChild(emptyEl);
+        }
+
+        for (let i = 1; i &lt;= daysInMonth; i++) {
+            const dayEl = document.createElement('div');
+            dayEl.className = 'calendar-day';
+            dayEl.textContent = i;
+
+            dayEl.onclick = () =&gt; {
+                const selectedDate = `${i}.${month + 1}.${year}`;
+                input.value = selectedDate;
+                console.log(`Завдання 9: Обрана дата: ${selectedDate}`);
+            };
+            grid.appendChild(dayEl);
+        }
+        wrapper.appendChild(grid);
+
+        // 4. Обробники для кнопок
+        document.getElementById('prev-month').onclick = () =&gt; {
+            currentDate.setMonth(month - 1);
+            renderCalendar();
+        };
+        document.getElementById('next-month').onclick = () =&gt; {
+            currentDate.setMonth(month + 1);
+            renderCalendar();
+        };
+    }
+
+    renderCalendar();
+}
+
+function runTask9() {
+    createCalendar('calendar-wrapper', 'calendar-input');
+    console.log("Завдання 9: Календар створено/оновлено.");
+}
+
+document.getElementById('calendar-input').addEventListener('dblclick', function() {
+    this.value = '';
+    console.log('Завдання 9: Вибір дати скасовано.');
+});
+                </code></pre>
+                <h3>Виконання на сайті:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task9_site.jpg" alt="Скріншот виконання завдання 9">
+                </div>
+                <h3>Результат у консолі:</h3>
+                <div class="screenshot-placeholder">
+                    <img src="img/laba4_task9_console.jpg" alt="Скріншот консолі для завдання 9">
+                </div>
+            </div>
+
+            <div id="vysnovky-lr4" class="tab-content">
+                <h2>ВИСНОВКИ</h2>
+                <p>Під час виконання цієї практичної роботи я придбав навички роботи з основними конструкціями мови JavaScript. Я навчився використовувати `prompt` для отримання даних від користувача та `alert` для виведення результатів.</p>
+                <p>Я освоїв керуючі конструкції, такі як `switch-case` та цикли `while` (Завдання 2, 3), та навчився писати власні функції з параметрами та значеннями, що повертаються (Завдання 4, 5, 6). Також я попрактикувався в роботі з масивами, включаючи їх створення, ітерацію, пошук елементів (Завдання 7) та маніпуляції, такі як `concat`, `slice` та `splice` (Завдання 6, 8).</p>
+            </div>
+
         </main>
     </div>
 </div>
