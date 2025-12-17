@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з практичних робіт</title>
+    <title>Звіти з практичних робіт - ПР №8</title>
     <style>
+        /* Стилі залишаються незмінними з попередніх робіт */
         body {
             font-family: Arial, sans-serif;
             background-color: #e9e9e9;
             margin: 0;
             padding: 20px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -20,7 +20,6 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         header {
             background-color: #002060;
             color: white;
@@ -31,22 +30,18 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .header-text {
             text-align: center;
             flex-grow: 1;
         }
-
         header h1 {
             margin: 0;
             font-size: 1.8em;
         }
-
         header p {
             margin: 5px 0 0;
             font-size: 1.1em;
         }
-
         .student-photo img {
             width: 100px;
             height: 100px;
@@ -54,7 +49,6 @@
             border: 3px solid white;
             object-fit: cover;
         }
-
         .lab-nav {
             display: flex;
             justify-content: center;
@@ -62,7 +56,6 @@
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-
         .lab-nav a {
             text-decoration: none;
             color: white;
@@ -71,20 +64,16 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .lab-nav a:hover, .lab-nav a.active {
             background-color: #003399;
         }
-
         .main-content {
             display: flex;
             gap: 20px;
         }
-
         .sidebar {
             flex: 0 0 250px;
         }
-
         .sidebar-nav a, .sidebar-nav .sidebar-title {
             display: block;
             text-decoration: none;
@@ -97,27 +86,18 @@
             transition: background-color 0.3s;
             cursor: pointer;
         }
-
         .sidebar-nav .sidebar-title {
             cursor: default;
+            font-weight: bold;
         }
-
         .sidebar-nav a:hover {
             background-color: #003399;
         }
-
         .sidebar-nav a.active {
             background-color: #FFD966;
             color: #002060;
             font-weight: bold;
         }
-
-        .sidebar-nav .sub-item {
-            width: 85%;
-            margin-left: auto;
-        }
-
-
         .content-area {
             flex-grow: 1;
             border: 1px solid #ccc;
@@ -125,15 +105,12 @@
             border-radius: 8px;
             min-height: 400px;
         }
-
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
         }
-
         .content-area h2, .content-area h3 {
             margin-top: 0;
             color: #002060;
@@ -144,21 +121,18 @@
         .content-area ul li {
             margin-bottom: 8px;
         }
-
-
-        pre {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        .screenshot-placeholder {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
         }
-
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            color: #333;
+        .screenshot-placeholder img {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
@@ -191,356 +165,193 @@
     <div class="main-content">
         <aside class="sidebar">
             <nav class="sidebar-nav">
-                <a onclick="showContent('tema', this)">Тема, мета, місце розташування</a>
-                <a onclick="showContent('opis', this)">Опис предметного середовища</a>
-                <div class="sidebar-title">Структура документа</div>
-                <a onclick="showContent('tables', this)" class="sub-item">HTML-код таблиць</a>
-                <a onclick="showContent('images', this)" class="sub-item">HTML-код зображення</a>
-                <a onclick="showContent('forms', this)" class="sub-item">HTML-код форми</a>
-                <a onclick="showContent('main-page-code', this)">Код головної сторінки</a>
-                <a onclick="showContent('vysnovky', this)">Висновки</a>
+                <a onclick="showContent('tema-lr8', this)" class="active">Тема, Мета, Місце розташування сайту, звіту</a>
+                <a onclick="showContent('zavdannya-1-4', this)">ЗАВДАННЯ 1-4</a>
+                <a onclick="showContent('zavdannya-5', this)">ЗАВДАННЯ 5</a>
+                <a onclick="showContent('vysnovky-lr8', this)">ВИСНОВКИ</a>
             </nav>
         </aside>
 
         <main class="content-area">
-            <div id="initial-message" class="tab-content active">
-                <h2>Вітаю!</h2>
+            <div id="initial-message" class="tab-content">
+                <h2>Практична робота №8</h2>
                 <p>Оберіть розділ ліворуч, щоб переглянути вміст.</p>
             </div>
 
-            <div id="tema" class="tab-content">
-                <h2>СТРУКТУРА HTML-ДОКУМЕНТА, ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ, РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ В HTML-ДОКУМЕНТІ</h2>
-                <p><strong>Мета:</strong> придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами. Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.</p>
-                <p><strong>Посилання на виконані завдання лабораторної роботи:</strong></p>
+            <div id="tema-lr8" class="tab-content active">
+                <h2>Тема, Мета, Місце розташування сайту, звіту</h2>
+                <h3>Тема: WEB-СХОВИЩЕ. WEB STORAGE API. АСИНХРОННІСТЬ. ПРОМІСИ. ПАГІНАЦІЯ.</h3>
+                <p><strong>Мета:</strong> придбати практичні навички роботи створення модального вікна; повторити процес створення макету; закріпити навички роботи з делегуванням подій; придбати практичні навички роботи з WEB STORAGE API та реалізації пагінації.</p>
+
+                <p><strong>Посилання на репозиторії:</strong></p>
                 <ul>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appWEB-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій власного веб-застосунку (GitHub)</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appWEB-VorobiovKyrylo-FIOT-2025/%D0%9B%D0%B0%D0%B1%D0%B0_1/index.html" target="_blank">Власний веб-застосунок (Жива сторінка)</a></li>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_INDEPENDENT-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій самостійної роботи №1 (GitHub)</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_INDEPENDENT-VorobiovKyrylo-FIOT-2025/%D0%A1%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D1%96%D0%B9%D0%BD%D0%B0%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B0_1/index.html" target="_blank">Самостійна робота №1 (Жива сторінка)</a></li>
-                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій звітного HTML - документу</a></li>
-                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/" target="_blank">Звітний HTML - документ (Жива сторінка)</a></li>
-                    <li><a href="#" target="_blank">Дизайн мобільного застосунку (Figma)</a></li>
-                    <li><a href="#" target="_blank">Дизайн постера (Figma)</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/WEB2025-Lab_8" target="_blank">Репозиторій ПР_8 (Завдання 1-4)</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/WEB2025-Laba_8_Task_5" target="_blank">Репозиторій ПР_8 (Завдання 5)</a></li>
+                    <li><a href="https://github.com/KyryloVorobiovIA-32/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025" target="_blank">Репозиторій звітного HTML-документу</a></li>
+                </ul>
+                <p><strong>Посилання на живі сторінки:</strong></p>
+                <ul>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/WEB2025-Lab_8/" target="_blank">Жива сторінка WEB-застосунку (Завдання 1-4)</a></li>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/WEB2025-Laba_8_Task_5/" target="_blank">Жива сторінка WEB-застосунку (Завдання 5)</a></li>
+                    <li><a href="https://kyrylovorobiovia-32.github.io/IA-32_appRECORD-VorobiovKyrylo-FIOT-2025/lab8.html" target="_blank">Жива сторінка звітного HTML-документу (ПР №8)</a></li>
                 </ul>
             </div>
 
-            <div id="opis" class="tab-content">
-                <h2>Опис предметного середовища</h2>
-                <p>Майбутній веб-застосунок присвячений чашкам різних видів та культур.</p>
-                <h3>Основний функціонал:</h3>
+            <div id="zavdannya-1-4" class="tab-content">
+                <h2>ЗАВДАННЯ 1-4</h2>
+
+                <h3>Завдання 1: Галерея зображень (Index.html)</h3>
+                <p><strong>Опис:</strong> Створено додаток для пошуку зображень за допомогою <strong>Pixabay API</strong>. Реалізовано асинхронні запити за допомогою бібліотеки Axios. Інтерфейс включає форму пошуку, галерею зображень з можливістю перегляду у модальному вікні (SimpleLightbox) та кнопку "Load More" для пагінації результатів. Використано бібліотеку iziToast для повідомлень користувачеві.</p>
+                <div class="screenshot-placeholder">
+                    <p>Скріншот результату Завдання 1 (Галерея зображень)</p>
+                    <img src="img/1.jpg" alt="Результат Завдання 1">
+                </div>
+
+                <hr>
+
+                <h3>Завдання 2: Форма зворотного зв'язку (2-form.html)</h3>
+                <p><strong>Опис:</strong> Реалізовано форму, яка зберігає введені дані (email та повідомлення) у локальному сховищі браузера (<strong>localStorage</strong>). Це дозволяє не втрачати дані при випадковому перезавантаженні сторінки. При сабміті форма очищується, а дані видаляються зі сховища.</p>
+                <div class="screenshot-placeholder">
+                    <p>Скріншот результату Завдання 2 (Форма зворотного зв'язку)</p>
+                    <img src="img/2.jpg" alt="Результат Завдання 2">
+                </div>
+
+                <hr>
+
+                <h3>Завдання 3: Таймер зворотного відліку (1-timer.html)</h3>
+                <p><strong>Опис:</strong> Створено таймер, що відраховує час до обраної дати. Для вибору дати використано бібліотеку <strong>flatpickr</strong>. Скрипт обчислює різницю між поточною та обраною датою і оновлює інтерфейс (дні, години, хвилини, секунди) щосекунди за допомогою `setInterval`. Додано валідацію дати (не можна обрати дату в минулому).</p>
+                <div class="screenshot-placeholder">
+                    <p>Скріншот результату Завдання 3 (Таймер)</p>
+                    <img src="img/3.jpg" alt="Результат Завдання 3">
+                </div>
+
+                <hr>
+
+                <h3>Завдання 4: Генератор промісів (2-snackbar.html)</h3>
+                <p><strong>Опис:</strong> Реалізовано форму для створення промісів. Користувач вводить затримку в мілісекундах та обирає стан (Fulfilled або Rejected). Після натискання кнопки створюється проміс, який через заданий час виконується або відхиляється, виводячи відповідне спливаюче повідомлення через бібліотеку <strong>iziToast</strong>.</p>
+                <div class="screenshot-placeholder">
+                    <p>Скріншот результату Завдання 4 (Генератор промісів)</p>
+                    <img src="img/4.jpg" alt="Результат Завдання 4">
+                </div>
+            </div>
+
+            <div id="zavdannya-5" class="tab-content">
+                <h2>ЗАВДАННЯ 5: Пошук зображень (Image Search)</h2>
+
+                <h3>Опис виконання:</h3>
+                <p>Створено повноцінний веб-застосунок для пошуку зображень з використанням <strong>Pixabay API</strong>. Проєкт реалізовано з використанням збірника <strong>Vite</strong> та модульної структури JavaScript.</p>
+                <p>Основний функціонал:</p>
                 <ul>
-                    <li>Інформаційні сторінки з описом видів та типів чашок (чайні, кавові, декоративні, колекційні).</li>
-                    <li>Розділ з історією виникнення та розвитку чашок у різних країнах.</li>
-                    <li>Галерея зображень чашок з описом.</li>
-                    <li>Каталог чашок з можливістю сортування та фільтрації:
-                        <ul>
-                            <li>за матеріалом (фарфор, скло, глина, метал);</li>
-                            <li>за об’ємом;</li>
-                            <li>за країною походження.</li>
-                        </ul>
-                    </li>
-                    <li>Пошук чашки за назвою.</li>
-                    <li>Сторінка з цікавими фактами про чашки.</li>
-                    <li>Форма для зворотного зв’язку (ім’я, email, коментар).</li>
+                    <li>Форма пошуку з валідацією (не можна відправити порожній запит).</li>
+                    <li>Виконання асинхронних HTTP-запитів до API Pixabay.</li>
+                    <li>Відображення результатів у вигляді адаптивної галереї карток.</li>
+                    <li>Інтеграція бібліотеки <strong>SimpleLightbox</strong> для перегляду великих зображень у модальному вікні.</li>
+                    <li>Використання бібліотеки <strong>iziToast</strong> для сповіщень про помилки або відсутність результатів.</li>
+                    <li>Індикатор завантаження (Loader) під час виконання запиту.</li>
                 </ul>
-                <h3>Бізнес-логіка (сценарій користувача)</h3>
-                <p>Користувач заходить на сайт. Вибирає розділ: «Каталог», «Історія», «Галерея», «Факти», «Про сайт». У каталозі користувач може:</p>
+
+                <div class="screenshot-placeholder">
+                    <p>Скріншот результату Завдання 5 (Інтерфейс пошуку зображень)</p>
+                    <img src="img/5.jpg" alt="Результат Завдання 5">
+                </div>
+
+                <h3>Основні моменти реалізації (Code snippets):</h3>
+                <p>Нижче наведено ключові частини коду, що відповідають за логіку роботи додатка.</p>
+
+                <h4>1. HTTP-запит до API (api.js)</h4>
+                <pre><code>
+const API_KEY = '53639112-c3579581a5487e725b0ffc9a5';
+const BASE_URL = 'https://pixabay.com/api/';
+
+export async function fetchImages(query) {
+    const params = new URLSearchParams({
+        key: API_KEY,
+        q: query,
+        image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: 'true',
+    });
+
+    const url = `${BASE_URL}?${params}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch images');
+    }
+
+    const data = await response.json();
+    return data.hits;
+}
+                </code></pre>
+
+                <h4>2. Обробка форми та рендеринг (main.js)</h4>
+                <pre><code>
+import { fetchImages } from './api.js';
+import iziToast from 'izitoast';
+import SimpleLightbox from 'simplelightbox';
+
+const form = document.querySelector('#search-form');
+const gallery = document.querySelector('.gallery');
+let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+
+form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const query = event.target.elements.query.value.trim();
+
+    if (!query) {
+        iziToast.warning({ title: 'Warning', message: 'Please enter a search term!' });
+        return;
+    }
+
+    gallery.innerHTML = '';
+    showLoader();
+
+    try {
+        const images = await fetchImages(query);
+        if (images.length === 0) {
+            iziToast.error({ title: 'Error', message: 'Sorry, there are no images matching your search query.' });
+            return;
+        }
+        renderGallery(images);
+        lightbox.refresh();
+    } catch (error) {
+        iziToast.error({ title: 'Error', message: 'Something went wrong!' });
+    } finally {
+        hideLoader();
+    }
+});
+                </code></pre>
+            </div>
+
+            <div id="vysnovky-lr8" class="tab-content">
+                <h2>ВИСНОВКИ</h2>
+                <p>Під час виконання практичної роботи №8 я закріпив навички роботи з асинхронним JavaScript та Web API. Зокрема:</p>
                 <ul>
-                    <li>переглянути список чашок;</li>
-                    <li>відфільтрувати за типом, матеріалом, країною;</li>
-                    <li>відсортувати за популярністю, алфавітом або датою додавання.</li>
-                </ul>
-                <p>У галереї переглядає фото чашок з описами. У розділі «Історія» читає текстову інформацію. На сторінці «Цікаві факти» знайомиться з короткими цікавими матеріалами. Використовує форму зворотного зв’язку для відгуків чи пропозицій.</p>
-                <h3>Функціональні вимоги</h3>
-                <ul>
-                    <li>Відображення інформаційних сторінок (опис чашок, історія, факти).</li>
-                    <li>Галерея зображень чашок.</li>
-                    <li>Каталог з можливістю: пошуку за назвою; фільтрації за матеріалом/типом/країною; сортування (за алфавітом, популярністю, датою).</li>
-                    <li>Форма зворотного зв’язку.</li>
-                    <li>Меню навігації для переходу між сторінками.</li>
-                </ul>
-                <h3>Нефункціональні вимоги</h3>
-                <ul>
-                    <li>Адаптивність для ПК та мобільних пристроїв.</li>
-                    <li>Зручний та інтуїтивний інтерфейс.</li>
-                    <li>Швидке завантаження сторінок (≤ 3 секунд).</li>
-                    <li>Кросбраузерність (Chrome, Firefox, Edge, Safari).</li>
-                    <li>Мінімалістичний дизайн з акцентом на контент.</li>
-                    <li>Легке розширення каталогу (можливість додати нові чашки).</li>
+                    <li>Навчився працювати з <strong>HTTP-запитами</strong> до зовнішніх сервісів (Pixabay API) за допомогою бібліотеки Axios та обробляти відповіді.</li>
+                    <li>Освоїв роботу з <strong>Web Storage API (localStorage)</strong> для збереження стану додатку між перезавантаженнями сторінки.</li>
+                    <li>Реалізував роботу з часом та інтервалами в JavaScript на прикладі таймера зворотного відліку.</li>
+                    <li>Поглибив розуміння роботи <strong>Promisses (Промісів)</strong>, їх станів та обробки результатів (resolve/reject).</li>
+                    <li>Отримав досвід підключення та використання сторонніх бібліотек (SimpleLightbox, flatpickr, iziToast) для покращення функціоналу та UX веб-застосунків.</li>
                 </ul>
             </div>
 
-            <div id="vysnovky" class="tab-content">
-                <h2>Висновки</h2>
-                <p>В ході виконання лабораторної роботи я придбав практичні навички роботи з основними елементами HTML. Я навчився створювати структуру веб-документа, використовуючи семантичні теги, розробив концепцію предметної галузі для майбутнього веб-застосунку та визначив його функціональні та нефункціональні вимоги. Також я опанував роботу з посиланнями, списками, таблицями та зображеннями, що дозволило мені створити цей звітний HTML-документ, який є основою для всіх наступних лабораторних робіт.</p>
-            </div>
-
-            <div id="tables" class="tab-content">
-                <h2>HTML-код таблиць</h2>
-                <h3>Теоретичні відомості про теги для таблиць</h3>
-                <p>Для створення таблиць в HTML використовується набір тегів, кожен з яких виконує свою роль:</p>
-                <ul>
-                    <li><strong>&lt;table&gt;</strong> — основний тег-контейнер, який оголошує створення таблиці. Атрибут <code>border="1"</code> є застарілим способом додати рамку, сьогодні для цього переважно використовують CSS.</li>
-                    <li><strong>&lt;thead&gt;</strong> — (table head) групує рядки, що є заголовком таблиці.</li>
-                    <li><strong>&lt;tbody&gt;</strong> — (table body) групує основні рядки з даними таблиці.</li>
-                    <li><strong>&lt;tr&gt;</strong> — (table row) створює новий рядок у таблиці.</li>
-                    <li><strong>&lt;th&gt;</strong> — (table header) створює комірку-заголовок усередині рядка. Текст у такій комірці за замовчуванням є жирним та вирівняним по центру.</li>
-                    <li><strong>&lt;td&gt;</strong> — (table data) створює звичайну комірку з даними всередині рядка.</li>
-                </ul>
-                <p>Код для створення порівняльної таблиці матеріалів з лабораторної роботи №1:</p>
-                <pre><code>&lt;h3&gt;Порівняльна таблиця матеріалів&lt;/h3&gt;
-&lt;table border="1"&gt;
-    &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Матеріал&lt;/th&gt;
-        &lt;th&gt;Переваги&lt;/th&gt;
-        &lt;th&gt;Епоха&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Глина&lt;/td&gt;
-        &lt;td&gt;Доступність, простота виготовлення&lt;/td&gt;
-        &lt;td&gt;Стародавній світ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Порцеляна&lt;/td&gt;
-        &lt;td&gt;Естетичність, зберігання тепла&lt;/td&gt;
-        &lt;td&gt;Середньовіччя - Новий час&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Скло&lt;/td&gt;
-        &lt;td&gt;Хімічна інертність, прозорість&lt;/td&gt;
-        &lt;td&gt;Новий час - Сучасність&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;"Розумний" пластик&lt;/td&gt;
-        &lt;td&gt;Легкість, додаткові функції&lt;/td&gt;
-        &lt;td&gt;Майбутнє&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_таблиць.jpg" alt="">
-            </div>
-
-            <div id="images" class="tab-content">
-                <h2>HTML-код зображення</h2>
-                <h3>Теоретичні відомості про теги для зображень</h3>
-                <p>Для вставки зображень на веб-сторінку використовується одинарний (непарний) тег <strong>&lt;img&gt;</strong>. Він має декілька ключових атрибутів:</p>
-                <ul>
-                    <li><strong>src</strong> (source) — найголовніший атрибут, який вказує шлях (URL) до файлу зображення.</li>
-                    <li><strong>alt</strong> (alternative text) — задає альтернативний текст, який буде відображатися, якщо зображення не завантажиться. Цей текст також важливий для доступності (для скрінрідерів) та для пошукової оптимізації (SEO).</li>
-                    <li><strong>width</strong> — визначає ширину зображення в пікселях.</li>
-                    <li><strong>height</strong> — визначає висоту зображення в пікселях. Задавати розміри є гарною практикою, оскільки браузер резервує місце для зображення ще до його повного завантаження, що запобігає "стрибкам" контенту.</li>
-                </ul>
-                <p>Код для відображення галереї зображень з лабораторної роботи №1:</p>
-                <pre><code>&lt;div&gt;
-    &lt;h2&gt;Різноманітність чашок крізь епохи&lt;/h2&gt;
-    &lt;p&gt;Від простих глиняних виробів до високотехнологічних гаджетів.&lt;/p&gt;
-
-    &lt;div&gt;
-        &lt;img src="../img/ancient1.jpg" alt="Стародавня глиняна чашка" width="200" height="200"&gt;
-        &lt;img src="../img/modern1.jpg" alt="Сучасна керамічна чашка" width="200" height="200"&gt;
-        &lt;img src="../img/future2.jpg" alt="Концепт чашки майбутнього" width="200" height="200"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_зображень.jpg" alt="">
-            </div>
-
-            <div id="forms" class="tab-content">
-                <h2>HTML-код форми</h2>
-                <h3>Теоретичні відомості про теги для списків</h3>
-                <p>У вашій роботі було використано два основних типи списків для структурування даних:</p>
-                <ul>
-                    <li><strong>&lt;ul&gt;</strong> (unordered list) — створює маркований список. Кожен елемент списку за замовчуванням позначається маркером (зазвичай кружечком).</li>
-                    <li><strong>&lt;ol&gt;</strong> (ordered list) — створює нумерований список. Кожен елемент автоматично нумерується (1, 2, 3...).</li>
-                    <li><strong>&lt;li&gt;</strong> (list item) — цим тегом позначається кожен окремий пункт як у маркованому, так і в нумерованому списку. Тег &lt;li&gt; завжди розміщується всередині контейнерів &lt;ul&gt; або &lt;ol&gt;.</li>
-                </ul>
-                <p>Код для створення форми зворотного зв'язку з лабораторної роботи №1:</p>
-                <pre><code>&lt;h2&gt;Форма для зворотного зв'язку&lt;/h2&gt;
-&lt;p&gt;Поділіться своєю думкою або поставте запитання!&lt;/p&gt;
-&lt;form action="#" method="post"&gt;
-    &lt;div&gt;
-        &lt;label for="user-name"&gt;Ваше ім'я:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="user-email"&gt;Ваш Email:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="cup-type"&gt;Якому типу чашок ви віддаєте перевагу?&lt;/label&gt;&lt;br&gt;
-        &lt;select id="cup-type" name="cupType"&gt;
-            &lt;option value="ceramic"&gt;Керамічні&lt;/option&gt;
-            &lt;option value="glass"&gt;Скляні&lt;/option&gt;
-            &lt;option value="porcelain"&gt;Порцелянові&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;div&gt;
-        &lt;label for="feedback"&gt;Ваш відгук:&lt;/label&gt;&lt;br&gt;
-        &lt;textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Напишіть тут..."&gt;&lt;/textarea&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_форми.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_списки.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_посилання.jpg" alt="">
-            </div>
-
-            <div id="main-page-code" class="tab-content">
-                <h2>Код головної сторінки</h2>
-                <p>Повний код файлу `index.html` з лабораторної роботи №1:</p>
-                <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="uk"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Світ Чашок: Історія та Сучасність&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;header&gt;
-    &lt;h1&gt;Подорож у світ чашок: від давнини до майбутнього&lt;/h1&gt;
-    &lt;p&gt;Ласкаво просимо на наш сайт, присвячений історії, сучасності та майбутньому такого звичного предмета, як чашка.&lt;/p&gt;
-&lt;/header&gt;
-
-&lt;main&gt;
-    &lt;div&gt;
-        &lt;h2&gt;Різноманітність чашок крізь епохи&lt;/h2&gt;
-        &lt;p&gt;Від простих глиняних виробів до високотехнологічних гаджетів.&lt;/p&gt;
-
-        &lt;div&gt;
-            &lt;img src="../img/ancient1.jpg" alt="Стародавня глиняна чашка" width="200" height="200"&gt;
-            &lt;img src="../img/modern1.jpg" alt="Сучасна керамічна чашка" width="200" height="200"&gt;
-            &lt;img src="../img/future2.jpg" alt="Концепт чашки майбутнього" width="200" height="200"&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;hr&gt;
-
-    &lt;h3&gt;Порівняльна таблиця матеріалів&lt;/h3&gt;
-    &lt;table border="1"&gt;
-        &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;Матеріал&lt;/th&gt;
-            &lt;th&gt;Переваги&lt;/th&gt;
-            &lt;th&gt;Епоха&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Глина&lt;/td&gt;
-            &lt;td&gt;Доступність, простота виготовлення&lt;/td&gt;
-            &lt;td&gt;Стародавній світ&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Порцеляна&lt;/td&gt;
-            &lt;td&gt;Естетичність, зберігання тепла&lt;/td&gt;
-            &lt;td&gt;Середньовіччя - Новий час&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Скло&lt;/td&gt;
-            &lt;td&gt;Хімічна інертність, прозорість&lt;/td&gt;
-            &lt;td&gt;Новий час - Сучасність&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;"Розумний" пластик&lt;/td&gt;
-            &lt;td&gt;Легкість, додаткові функції&lt;/td&gt;
-            &lt;td&gt;Майбутнє&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;hr&gt;
-
-    &lt;h3&gt;Класифікація чашок&lt;/h3&gt;
-
-    &lt;h4&gt;За призначенням:&lt;/h4&gt;
-    &lt;ul&gt;
-        &lt;li&gt;Чайні&lt;/li&gt;
-        &lt;li&gt;Кавові (еспресо, американо, лате)&lt;/li&gt;
-        &lt;li&gt;Бульйонні&lt;/li&gt;
-        &lt;li&gt;Дитячі&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;h4&gt;Основні етапи еволюції:&lt;/h4&gt;
-    &lt;ol&gt;
-        &lt;li&gt;Первісні ємності з дерева та каменю&lt;/li&gt;
-        &lt;li&gt;Винайдення гончарства та глиняні вироби&lt;/li&gt;
-        &lt;li&gt;Відкриття порцеляни в Китаї&lt;/li&gt;
-        &lt;li&gt;Промислова революція та масове виробництво&lt;/li&gt;
-        &lt;li&gt;Сучасні дизайнерські та технологічні рішення&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;hr&gt;
-
-    &lt;h2&gt;Форма для зворотного зв'язку&lt;/h2&gt;
-    &lt;p&gt;Поділіться своєю думкою або поставте запитання!&lt;/p&gt;
-    &lt;form action="#" method="post"&gt;
-        &lt;div&gt;
-            &lt;label for="user-name"&gt;Ваше ім'я:&lt;/label&gt;&lt;br&gt;
-            &lt;input type="text" id="user-name" name="userName" placeholder="Введіть ім'я"&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="user-email"&gt;Ваш Email:&lt;/label&gt;&lt;br&gt;
-            &lt;input type="email" id="user-email" name="userEmail" placeholder="example@email.com"&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="cup-type"&gt;Якому типу чашок ви віддаєте перевагу?&lt;/label&gt;&lt;br&gt;
-            &lt;select id="cup-type" name="cupType"&gt;
-                &lt;option value="ceramic"&gt;Керамічні&lt;/option&gt;
-                &lt;option value="glass"&gt;Скляні&lt;/option&gt;
-                &lt;option value="porcelain"&gt;Порцелянові&lt;/option&gt;
-            &lt;/select&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;div&gt;
-            &lt;label for="feedback"&gt;Ваш відгук:&lt;/label&gt;&lt;br&gt;
-            &lt;textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Напишіть тут..."&gt;&lt;/textarea&gt;
-        &lt;/div&gt;
-        &lt;br&gt;
-        &lt;button type="submit"&gt;Надіслати&lt;/button&gt;
-    &lt;/form&gt;
-
-&lt;/main&gt;
-
-&lt;footer&gt;
-    &lt;hr&gt;
-    &lt;p&gt;Для детального аналізу нашого проєкту, будь ласка, перегляньте сторінку з описом.&lt;/p&gt;
-    &lt;a href="details.html"&gt;Дізнатися більше про предметну галузь та бізнес-логіку&lt;/a&gt;
-    &lt;p&gt;&amp;copy; 2025 Світ Чашок&lt;/p&gt;
-&lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                <img src="img/Лаба_1_HTML-код_гол.сторінка1.jpg" alt="">
-                <img src="img/Лаба_1_HTML-код_гол.сторінка2.jpg" alt="">
-            </div>
         </main>
     </div>
 </div>
 
 <script>
+    // Функціонал перемикання вкладок
     function showContent(contentId, clickedElement) {
-        // Ховаємо всі блоки з контентом
         const allContent = document.querySelectorAll('.tab-content');
         allContent.forEach(content => {
             content.classList.remove('active');
         });
 
-        // Знаходимо і показуємо потрібний блок
         const targetContent = document.getElementById(contentId);
         if (targetContent) {
             targetContent.classList.add('active');
         }
 
-        // Робота з активним станом кнопок
         const allButtons = document.querySelectorAll('.sidebar-nav a');
         allButtons.forEach(button => {
             button.classList.remove('active');
